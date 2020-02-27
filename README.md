@@ -1,6 +1,6 @@
 # Emoji-Predictor
 
-##Informazioni tecniche
+## Informazioni tecniche
 
 Il progetto è stato sviluppato per funzionare su [Colaboratory](https://colab.research.google.com/), un tool Google che permette di eseguire Python su browser, molto simile a [Jupiter](https://jupyter.org/), tuttavia non possiamo garantire la piena compatibilità con quest'ultimo.
 
