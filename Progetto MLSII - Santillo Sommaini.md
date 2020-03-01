@@ -20,7 +20,7 @@ Ma, per molti scopi pratici, non occorre essere precisi al 100% nelle analisi pe
 
 La previsione delle **emoji** è una variante divertente dell'analisi della sentiment. Quando si scrivono dei messaggi agli amici per esempio, potrebbe essere utile allegare un'emoji che esprime lo stato emotivo o l'intenzione del messaggio, integrando questa funzionalità, ad esempio, in una tastiera virtuale.
   
-In questo progetto, costruiamo un ** classificatore ** che impara ad associare emoji a frasi. 
+In questo progetto, costruiamo un **classificatore** che impara ad associare emoji a frasi. 
 
 Iniziamo con una grande quantità di frasi che contengono emoji raccolti dai messaggi di Twitter. 
 
@@ -99,7 +99,7 @@ Sono stati testati i seguenti classificatori:
 + `SGDClassifier`  
 + `RidgeClassifier`  
 
-Per info sui vari classificatori: https://scikit-learn.org/stable/modules/classes.html#module-sklearn.linear_model
+Per info sui vari classificatori rimandiamo alla [documentazione ufficiale](https://scikit-learn.org/stable/modules/classes.html#module-sklearn.linear_model).
 
 I dati sono divisi 90-10, il 90% per il training set e il 10% per il testing. Abbiamo scelto il 10% per essere sicuri di avere un numero sufficiente di dati per la parte di testing e per evitare il più possibile l'overfitting. Separando i dati, inoltre, ci assicuriamo che il modello si generalizzi bene e possa funzionare bene anche con frasi del tutto sconosciute.
   
@@ -133,7 +133,7 @@ L'accuratezza per il training e per il test di ogni classificatore sono riassunt
 | SGDClassifier               | 0.9942903         | 0.6324324     |  
 | RidgeClassifier             | 0.9939898         | 0.6477477     |   
   
-Guardando i risultati, LinearSVC lavora bene, cosi come SGDClassifier, RidgeClassifier, in Ridge l'accuratezza è leggermente superiore rispetto agli altri classificatori.  
+Guardando i risultati, LinearSVC lavora bene, cosi come SGDClassifier e RidgeClassifier, in Ridge l'accuratezza è leggermente superiore rispetto agli altri classificatori.  
   
 In generale possiamo notare che abbiamo sempre una training accuracy maggiore della test accuracy, abbiamo inevitabilmente dell'overfitting.  
   
@@ -142,7 +142,7 @@ Dal momento che RidgeClassifier sembra lavorare bene, abbiamo fatto un tuning de
   
 ## Final model  
   
-Sia 'sag' che 'saga' utilizzano la Stochastic Average Gradient Descent, ma 'saga' usa la versione imparziale e più flessibile. Entrambi i metodi usano una procedura iterativa e sono spesso più veloci di altri solvers quando il numero delle feature è elevato.  
+Nel RidgeClassifier in particolare ci siamo soffermati sulla scelta del solver più adatto, alla fine abbiamo optato per una Stocastic Average Gradient Descent, sia 'sag' che 'saga' utilizzano la Stochastic Average Gradient Descent, ma 'saga' usa la versione imparziale e più flessibile. Entrambi i metodi usano una procedura iterativa e sono spesso più veloci di altri solvers quando il numero delle feature è elevato.  
 
 ### Dataset psychExp originale  
   
