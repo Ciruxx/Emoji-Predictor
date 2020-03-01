@@ -99,7 +99,7 @@ Sono stati testati i seguenti classificatori:
 + `SGDClassifier`  
 + `RidgeClassifier`  
 
-// TODO Parlare un pò dei classificatori? 
+Per info sui vari classificatori: https://scikit-learn.org/stable/modules/classes.html#module-sklearn.linear_model
 
 I dati sono divisi 90-10, il 90% per il training set e il 10% per il testing. Abbiamo scelto il 10% per essere sicuri di avere un numero sufficiente di dati per la parte di testing e per evitare il più possibile l'overfitting. Separando i dati, inoltre, ci assicuriamo che il modello si generalizzi bene e possa funzionare bene anche con frasi del tutto sconosciute.
   
@@ -109,8 +109,16 @@ Valutiamo le prestazioni di ciascun modello calcolando l'accuracy.
   
 ### Dataset psychExp originale  
   
-// TODO   
-  
+| Classifier                  | Training Accuracy | Test Accuracy |  
+| --------------------------- | ----------------- | ------------- |  
+| SVC                         | 0.9119133         | 0.4612299     |  
+| LinearSVC                   | 0.9988116         | 0.5855615     |  
+| RandomForestClassifier      | 0.9988116         | 0.5467914     |  
+| DecisionTreeClassifier      | 0.9988116         | 0.4425134     |  
+| PassiveAggressiveClassifier | 0.9986631         | 0.5802139     |  
+| SGDClassifier               | 0.9988116         | 0.5655080     |  
+| RidgeClassifier             | 0.9962864         | 0.6029412     |  
+
 ### Dataset psychExp esteso  
   
 L'accuratezza per il training e per il test di ogni classificatore sono riassunte nella tabella.  
@@ -140,9 +148,9 @@ Sia 'sag' che 'saga' utilizzano la Stochastic Average Gradient Descent, ma 'saga
   
  Il modello finale ha avuto i seguenti risultati:  
    
- | Validation Accuracy | Training Accuracy | Test Accuracy     | Best parameter |  
- | --------------------| ----------------- |-------------------|----------------|  
- | TODO | TODO | TODO | TODO | 
+ | Validation Accuracy | Training Accuracy  | Test Accuracy      | Best parameter |  
+ | --------------------| -------------------|--------------------|----------------|  
+ | 0.5932899150718509  | 0.9939096850861556 | 0.5989304812834224 | alpha = 10     | 
   
 ### Dataset psychExp esteso  
 
@@ -175,13 +183,13 @@ La conta degli elementi è data dalla seguente tabella:
   
 | Emoji  | One Hot              | Count |  
 | ------ | -------------------- | ----- |  
-|fear    |(0. 1. 0. 0. 0. 0. 0.)|TODO   |  
-|anger   |(0. 0. 1. 0. 0. 0. 0.)|TODO   |  
-|joy     |(1. 0. 0. 0. 0. 0. 0.)|TODO   |   
-|sadness |(0. 0. 0. 1. 0. 0. 0.)|TODO   |  
-|disgust |(0. 0. 0. 0. 1. 0. 0.)|TODO   |  
-|guilt   |(0. 0. 0. 0. 0. 0. 1.)|TODO   |  
-|shame   |(0. 0. 0. 0. 0. 1. 0.)|TODO   |  
+|joy     |(1. 0. 0. 0. 0. 0. 0.)|1084   |  
+|fear    |(0. 1. 0. 0. 0. 0. 0.)|1078   |  
+|anger   |(0. 0. 1. 0. 0. 0. 0.)|1080   |   
+|sadness |(0. 0. 0. 1. 0. 0. 0.)|1079   |  
+|disgust |(0. 0. 0. 0. 1. 0. 0.)|1057   |  
+|shame   |(0. 0. 0. 0. 0. 1. 0.)|1045   |  
+|guilt   |(0. 0. 0. 0. 0. 0. 1.)|1057   | 
   
 La confusion matrix per il dataset esteso si presenta quindi in questo modo  
   
@@ -194,14 +202,15 @@ La confusion matrix per il dataset esteso si presenta quindi in questo modo
 La conta degli elementi è data dalla seguente tabella:   
   
 | Emoji  | One Hot              | Count |  
-| ------ | -------------------- | ----- |  
+| ------ | -------------------- | ----- | 
+|joy     |(1. 0. 0. 0. 0. 0. 0.)|1907   | 
 |fear    |(0. 1. 0. 0. 0. 0. 0.)|2225   |  
-|anger   |(0. 0. 1. 0. 0. 0. 0.)|1937   |  
-|joy     |(1. 0. 0. 0. 0. 0. 0.)|1907   |   
+|anger   |(0. 0. 1. 0. 0. 0. 0.)|1937   |   
 |sadness |(0. 0. 0. 1. 0. 0. 0.)|1865   |  
-|disgust |(0. 0. 0. 0. 1. 0. 0.)|1057   |  
-|guilt   |(0. 0. 0. 0. 0. 0. 1.)|1057   |  
+|disgust |(0. 0. 0. 0. 1. 0. 0.)|1057   |
 |shame   |(0. 0. 0. 0. 0. 1. 0.)|1045   |  
+|guilt   |(0. 0. 0. 0. 0. 0. 1.)|1057   |  
+ 
   
 La confusion matrix per il dataset esteso si presenta quindi in questo modo  
   
