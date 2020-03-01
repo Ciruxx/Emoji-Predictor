@@ -191,11 +191,9 @@ La conta degli elementi è data dalla seguente tabella:
 |shame   |(0. 0. 0. 0. 0. 1. 0.)|1045   |  
 |guilt   |(0. 0. 0. 0. 0. 0. 1.)|1057   | 
   
-La confusion matrix per il dataset esteso si presenta quindi in questo modo  
+La confusion matrix per il dataset originale si presenta quindi in questo modo  
   
-![Confusion Matrix Extended](./images/TODO.jpg)  
-
-// TODO Commenti
+![Confusion Matrix Extended](./images/conf_matrix_old.jpg)
   
 ### Dataset psychExp esteso  
   
