@@ -230,8 +230,8 @@ Altri ***iperparametri*** noti sono:
 + ***solver***: The solver for weight optimization.
 		‘lbfgs’ is an optimizer in the family of quasi-Newton methods.
 		‘sgd’ refers to stochastic gradient descent.
-		‘adam’ refers to a stochastic gradient-based optimizer proposed by Kingma, Diederik, and Jimmy Ba
-+ ***alpha***: L2 penalty (regularization term) parameter. Per mitigare l'overfitting.
+		‘adam’ refers to a stochastic gradient-based optimizer.
++ ***alpha***: L2 penalty parameter per mitigare l'overfitting.
 + ***dimensione batch***: Size of minibatches for stochastic optimizers.
 + ***Learning rate***: Learning rate schedule for weight updates.
 		‘constant’ is a constant learning rate given by ‘learning_rate_init’.
@@ -269,7 +269,7 @@ Il tempo di addestramento è stato di ***x ore circa*** portando al risultato:
 
 | Training Accuracy  | Test Accuracy      |
  | --------------------| -------------------|
- | 0.9949914855253932  | 0.6 |
+ | 0.9949914855253932  |  |
  
 ### Analisi Errori
 //TODO: serve la confusion matrix
