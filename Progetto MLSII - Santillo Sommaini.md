@@ -222,6 +222,8 @@ Una Rete Neurale Artificiale è un modello di machine learning che riesce appren
 
 Il primo strato di una rete neurale prende in input le features, l’ultimo strato fornisce l’output della rete, mentre gli strati intermedi, chiamati anche strati nascosti (o hidden layer), utilizzano le features provenienti dallo strato precedente per apprendere nuove features più significative per l’obiettivo della nostra rete. Nell’ambito del deep learning i neuroni vengono chiamati anche unità o nodi.
 
+![NeuralNetworkImage](./images/NN.jpg)  
+
 Il numero di strati e di nodi di una rete neurale è uno degli ***iperparametri*** del modello, cioè quei parametri che tocca a noi definire e ottimizzare. Strati nascosti differenti possono avere un numero di nodi differenti, per questo motivo le reti neurali sono uno strumento potente quanto complesso e andrebbero utilizzare solo nei casi in cui modelli più semplici si rivelano inefficaci per il nostro problema.
 
 Altri ***iperparametri*** noti sono: 
