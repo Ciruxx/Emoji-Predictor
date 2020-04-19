@@ -216,7 +216,7 @@ La confusion matrix per il dataset esteso si presenta quindi in questo modo
   
 Possiamo notare che le emoji con meno entry nel database sono quelle che risultano meno precise.  
   
-### Reti Neurali
+## Reti Neurali
 Al fine di migliorare i risultati ottenuti attraverso l'uso di Classificatori, abbiamo pensato di utilizzare le Reti Neurali. 
 Una Rete Neurale Artificiale è un modello di machine learning che riesce apprendere relazioni non lineari nei dati, anche molto complesse. Diversi neuroni sono disposti su diversi strati posti in sequenza, i neuroni di strati successivi sono connessi ai neuroni degli strati precedenti tramite dei pesi.
 
@@ -233,7 +233,7 @@ Altri ***iperparametri*** noti sono:
 		‘lbfgs’ is an optimizer in the family of quasi-Newton methods.
 		‘sgd’ refers to stochastic gradient descent.
 		‘adam’ refers to a stochastic gradient-based optimizer.
-+ ***alpha***: L2 penalty parameter per mitigare l'overfitting.
++ ***alpha***: L2 penalty parameter (per mitigare l'overfitting).
 + ***dimensione batch***: Size of minibatches for stochastic optimizers.
 + ***Learning rate***: Learning rate schedule for weight updates.
 		‘constant’ is a constant learning rate given by ‘learning_rate_init’.
@@ -241,42 +241,57 @@ Altri ***iperparametri*** noti sono:
 		‘adaptive’ keeps the learning rate constant to ‘learning_rate_init’ as long as training loss keeps decreasing. Each time 			two consecutive epochs fail to decrease training loss by at least tol, or fail to increase validation score by at 			least tol if ‘early_stopping’ is on, the current learning rate is divided by 5.
 + ***tolerance***: Tolerance for the optimization. When the loss or score is not improving by at least tol, onvergence is considered to 			be reached and training stops.
 
-Non sono gli unici ma i principali per garantire alla rete neurale il comportamento desiderato. Per altre info vedere documentazione: https://scikit-learn.org/stable/modules/classes.html#module-sklearn.neural_network
+Non sono gli unici ma i principali per garantire alla rete neurale il comportamento desiderato. Per altre info consultare la [documentazione](https://scikit-learn.org/stable/modules/classes.html#module-sklearn.neural_network).
 
-#### Primo addestramento 
-Il primo tentativo di addestramento ha visto la scelto della rete neurale MLPClassifier. Il tuning dei parametri è stato il seguente: (hidden_layer_sizes=(100,100,100), max_iter=500, alpha=0.0001, solver='lbfgs', verbose=True,  random_state=21,tol=0.000000001).
+### Primo addestramento 
+Il primo tentativo di addestramento ha visto la scelta della rete neurale MLPClassifier. Il tuning dei parametri è stato il seguente: 
+
+ | hidden_layer_sizes  | max_iter | alpha  | solver | verbose | random_state | tol         |
+ | --------------------| ---------|--------|--------|---------|--------------|-------------|
+ | (100,100,100)       | 500      | 0.0001 | lbfgs  | True    | 21           | 0.000000001 |
+ 
 Il tempo di addestramento è stato di ***1 ora circa*** portando al risultato:
 
- | Training Accuracy  | Test Accuracy      |
- | --------------------| -------------------|
+ | Training Accuracy   | Test Accuracy         |
+ | --------------------| ----------------------|
  | 0.9949914855253932  | 0.5810810810810810810 |
  
-### Analisi Errori
+#### Analisi Errori
 ![Confusion Matrix Extended](./images/confMatrixLbgfs.jpg)  
 
-#### Secondo addestramento
-Il secondo tentativo di addestramento ha visto la scelto della rete neurale MLPClassifier. Il tuning dei parametri è stato il seguente: (hidden_layer_sizes=(100,100,100), max_iter=500, alpha=0.0001, solver='sgd', verbose=10,  random_state=21,tol=0.000000001)
+### Secondo addestramento
+Il secondo tentativo di addestramento ha visto la scelta della rete neurale MLPClassifier. Il tuning dei parametri è stato il seguente: 
+
+ | hidden_layer_sizes  | max_iter | alpha  | solver | verbose | random_state | tol         |
+ | --------------------| ---------|--------|--------|---------|--------------|-------------|
+ | (100,100,100)       | 500      | 0.0001 | sgd    | True    | 21           | 0.000000001 |
+ 
 Il tempo di addestramento è stato di ***2 ore circa*** portando al risultato:
 
- | Training Accuracy  | Test Accuracy      |
- | --------------------| -------------------|
- | 0.9949914855253932  | 0.6 |
+ | Training Accuracy   | Test Accuracy      |
+ | --------------------|--------------------|
+ | 0.9949914855253932  | 0.6                |
  
-### Analisi Errori
+#### Analisi Errori
 //TODO: serve la confusion matrix
 
-#### Terzo addestramento
-Il terzo tentativo di addestramento ha visto la scelto della rete neurale MLPClassifier. Il tuning dei parametri è stato il seguente: (hidden_layer_sizes=(100,100,100,100,100), batch_size=64, max_iter=200, alpha=0.0001, solver='sgd', learning_rate='invscaling', verbose=True,  random_state=21, tol=0.000000001)
+### Terzo addestramento
+Il terzo tentativo di addestramento ha visto la scelto della rete neurale MLPClassifier. Il tuning dei parametri è stato il seguente: 
+
+ | hidden_layer_sizes    | max_iter | alpha  | solver | verbose | random_state | tol         | learning_rate | batch_size |
+ | ----------------------|----------|--------|--------|---------|--------------|-------------|---------------|------------|
+ | (100,100,100,100,100) | 200      | 0.0001 | sgd    | True    | 21           | 0.000000001 | invscaling    | 64         |
+
 Il tempo di addestramento è stato di ***x ore circa*** portando al risultato:
 
-| Training Accuracy  | Test Accuracy      |
- | --------------------| -------------------|
- | 0.9949914855253932  |  |
+| Training Accuracy   | Test Accuracy      |
+| --------------------| -------------------|
+| 0.9949914855253932  |                    |
  
-### Analisi Errori
+#### Analisi Errori
 //TODO: serve la confusion matrix
 
-### Future Work   
+## Future Work   
 I risultati sui diversi classificatori sono sicuramente incoraggianti: possiamo affermare che con un dataset più ampio potremmo sicuramente diminuire l'overfitting e quindi prestazioni migliori in termini di accuracy.   
   
 La confusion matrix ci permette graficamente di vedere il numero di errori di classificazione e quali sono le emozioni che vengono confuse più spesso.  
