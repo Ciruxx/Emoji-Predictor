@@ -30,7 +30,7 @@ Quindi esaminiamo le funzionalità di quelle frasi (parole, coppie di parole, ec
 
 D'altra parte, la parola "felice" potrebbe essere preceduta da "non", nel qual caso non dovremmo fare affidamento solo su singole parole da associare a determinate faccine. 
 
-Per questo motivo, esaminiamo anche le sequenze di parole e, in questo caso, impareremo che "non felice" è più fortemente associato alla tristezza, superando la parte "felice". Il classificatore impara quindi a guardare la totalità di molte sequenze di parole trovate in una frase e capisce quale classe di emoji caratterizzerebbe meglio quella frase. Sebbene il principio sia semplice, se avessimo milioni di parole di testo con emoticon note associate alle frasi, possiamo effettivamente addestrare abbastanza bene il nostro classificatore.
+Per questo motivo, esaminiamo anche le sequenze di parole e, in questo caso, impareremo che "non felice" è fortemente associato alla tristezza, superando la parte "felice". Il classificatore impara quindi a guardare la totalità di molte sequenze di parole trovate in una frase e capisce quale classe di emoji caratterizzerebbe meglio quella frase. Sebbene il principio sia semplice, se avessimo milioni di parole di testo con emoticon note associate alle frasi, possiamo effettivamente addestrare abbastanza bene il nostro classificatore.
   
 ## Goal del progetto  
 
@@ -216,7 +216,64 @@ La confusion matrix per il dataset esteso si presenta quindi in questo modo
   
 Possiamo notare che le emoji con meno entry nel database sono quelle che risultano meno precise.  
   
-  
+### Reti Neurali
+Al fine di migliorare i risultati ottenuti attraverso l'uso di Classificatori, abbiamo pensato di utilizzare le Reti Neurali. 
+Una Rete Neurale Artificiale è un modello di machine learning che riesce apprendere relazioni non lineari nei dati, anche molto complesse. Diversi neuroni sono disposti su diversi strati posti in sequenza, i neuroni di strati successivi sono connessi ai neuroni degli strati precedenti tramite dei pesi.
+
+Il primo strato di una rete neurale prende in input le features, l’ultimo strato fornisce l’output della rete, mentre gli strati intermedi, chiamati anche strati nascosti (o hidden layer), utilizzano le features provenienti dallo strato precedente per apprendere nuove features più significative per l’obiettivo della nostra rete. Nell’ambito del deep learning i neuroni vengono chiamati anche unità o nodi.
+
+Il numero di strati e di nodi di una rete neurale è uno degli ***iperparametri*** del modello, cioè quei parametri che tocca a noi definire e ottimizzare. Strati nascosti differenti possono avere un numero di nodi differenti, per questo motivo le reti neurali sono uno strumento potente quanto complesso e andrebbero utilizzare solo nei casi in cui modelli più semplici si rivelano inefficaci per il nostro problema.
+
+Altri ***iperparametri*** noti sono: 
+
++ ***numero di nodi di ogni hidden layer***: The ith element represents the number of neurons in the ith hidden layer.
++ ***solver***: The solver for weight optimization.
+		‘lbfgs’ is an optimizer in the family of quasi-Newton methods.
+		‘sgd’ refers to stochastic gradient descent.
+		‘adam’ refers to a stochastic gradient-based optimizer proposed by Kingma, Diederik, and Jimmy Ba
++ ***alpha***: L2 penalty (regularization term) parameter. Per mitigare l'overfitting.
++ ***dimensione batch***: Size of minibatches for stochastic optimizers.
++ ***Learning rate***: Learning rate schedule for weight updates.
+		‘constant’ is a constant learning rate given by ‘learning_rate_init’.
+		‘invscaling’ gradually decreases the learning rate at each time step ‘t’ using an inverse scaling exponent of ‘power_t’. 			effective_learning_rate = learning_rate_init / pow(t, power_t)
+		‘adaptive’ keeps the learning rate constant to ‘learning_rate_init’ as long as training loss keeps decreasing. Each time 			two consecutive epochs fail to decrease training loss by at least tol, or fail to increase validation score by at 			least tol if ‘early_stopping’ is on, the current learning rate is divided by 5.
++ ***tolerance***: Tolerance for the optimization. When the loss or score is not improving by at least tol, onvergence is considered to 			be reached and training stops.
+
+Non sono gli unici ma i principali per garantire alla rete neurale il comportamento desiderato. Per altre info vedere documentazione: https://scikit-learn.org/stable/modules/classes.html#module-sklearn.neural_network
+
+#### Primo addestramento 
+Il primo tentativo di addestramento ha visto la scelto della rete neurale MLPClassifier. Il tuning dei parametri è stato il seguente: (hidden_layer_sizes=(100,100,100), max_iter=500, alpha=0.0001, solver='lbfgs', verbose=True,  random_state=21,tol=0.000000001).
+Il tempo di addestramento è stato di ***1 ora circa*** portando al risultato:
+
+ | Training Accuracy  | Test Accuracy      |
+ | --------------------| -------------------|
+ | 0.9949914855253932  | 0.5810810810810810810 |
+ 
+### Analisi Errori
+![Confusion Matrix Extended](./images/confMatrixLbgfs.jpg)  
+
+#### Secondo addestramento
+Il secondo tentativo di addestramento ha visto la scelto della rete neurale MLPClassifier. Il tuning dei parametri è stato il seguente: (hidden_layer_sizes=(100,100,100), max_iter=500, alpha=0.0001, solver='sgd', verbose=10,  random_state=21,tol=0.000000001)
+Il tempo di addestramento è stato di ***2 ore circa*** portando al risultato:
+
+ | Training Accuracy  | Test Accuracy      |
+ | --------------------| -------------------|
+ | 0.9949914855253932  | 0.6 |
+ 
+### Analisi Errori
+//TODO: serve la confusion matrix
+
+#### Terzo addestramento
+Il terzo tentativo di addestramento ha visto la scelto della rete neurale MLPClassifier. Il tuning dei parametri è stato il seguente: (hidden_layer_sizes=(100,100,100,100,100), batch_size=64, max_iter=200, alpha=0.0001, solver='sgd', learning_rate='invscaling', verbose=True,  random_state=21, tol=0.000000001)
+Il tempo di addestramento è stato di ***x ore circa*** portando al risultato:
+
+| Training Accuracy  | Test Accuracy      |
+ | --------------------| -------------------|
+ | 0.9949914855253932  | 0.6 |
+ 
+### Analisi Errori
+//TODO: serve la confusion matrix
+
 ### Future Work   
 I risultati sui diversi classificatori sono sicuramente incoraggianti: possiamo affermare che con un dataset più ampio potremmo sicuramente diminuire l'overfitting e quindi prestazioni migliori in termini di accuracy.   
   
