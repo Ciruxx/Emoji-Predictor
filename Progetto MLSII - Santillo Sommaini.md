@@ -282,7 +282,7 @@ Il terzo tentativo di addestramento ha visto la scelto della rete neurale MLPCla
  | ----------------------|----------|--------|--------|---------|--------------|-------------|---------------|------------|
  | (100,100,100,100,100) | 200      | 0.0001 | sgd    | True    | 21           | 0.000000001 | invscaling    | 64         |
 
-Il tempo di addestramento è stato di ***x ore circa*** portando al risultato:
+Il tempo di addestramento è stato di ***2 ore circa*** portando al risultato:
 
 | Training Accuracy   | Test Accuracy      |
 | --------------------| -------------------|
