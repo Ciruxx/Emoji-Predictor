@@ -286,10 +286,10 @@ Il tempo di addestramento è stato di ***x ore circa*** portando al risultato:
 
 | Training Accuracy   | Test Accuracy      |
 | --------------------| -------------------|
-| 0.9949914855253932  |                    |
+| 0.9949914855253932  |          0.60270270270270          |
  
 #### Analisi Errori
-//TODO: serve la confusion matrix
+![Confusion Matrix Extended](./images/confusionMatrix.jpg)
 
 ## Future Work   
 I risultati sui diversi classificatori sono sicuramente incoraggianti: possiamo affermare che con un dataset più ampio potremmo sicuramente diminuire l'overfitting e quindi prestazioni migliori in termini di accuracy.   
