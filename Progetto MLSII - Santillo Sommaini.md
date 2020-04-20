@@ -273,7 +273,8 @@ Il tempo di addestramento è stato di ***2 ore circa*** portando al risultato:
  | 0.9949914855253932  | 0.6                |
  
 #### Analisi Errori
-//TODO: serve la confusion matrix
+
+![ConfusionMatrixSGD](./images/confMatrixSGD.jpg)
 
 ### Terzo addestramento
 Il terzo tentativo di addestramento ha visto la scelto della rete neurale MLPClassifier. Il tuning dei parametri è stato il seguente: 
