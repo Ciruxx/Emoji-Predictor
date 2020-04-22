@@ -292,13 +292,51 @@ Il tempo di addestramento è stato di ***2 ore circa*** portando al risultato:
 #### Analisi Errori
 ![Confusion Matrix Extended](./images/confusionMatrix.jpg)
 
-## Future Work   
+### WordCloud
+Parallelamente alle NN abbiamo, causa il basso numero di elementi nel dataset, applicato delle wordcloud. Preso il dataset iniziale, lo abbiamo diviso per sentiment e per ogni emoji abbiamo generato una wordcloud corrispondente. Le wordcloud sono delle strutture friendly per visualizzare informazioni utili riguardo un sottinsieme del dataset. Ogni nuvola contiene un insieme di parole la cui visualizzazione è influenzata dall'occorrenza della parola stessa: se una parola è presente ed influenza quindi in maniera importante quel sottinsieme, questa sarà, rispetto alla nuvola, centrata e con un font di dimensioni maggiori. Nel nostro caso applicando queste ad ogni emoji, abbiamo potuto osservare quali fossero le parole più influenti per la classificazione di una frase tra i sentiment trattati.
+
+In particolare per il sentiment JOY:
+
+![JOY](./images/joy.PNG)
+
+In particolare per il sentiment DISGUST:
+
+![DISGUST](./images/disgust.PNG)
+
+In particolare per il sentiment FEAR:
+
+![FEAR](./images/fear.PNG)
+
+In particolare per il sentiment GUILT:
+
+![GUILT](./images/guilt.PNG)
+
+In particolare per il sentiment SHAME:
+![JOY](./images/joy.PNG)
+
+
+In particolare per il sentiment SADNESS:
+
+![SHAME](./images/guilt.PNG)
+
+
+In particolare per il sentiment ANGER:
+
+![ANGER](./images/anger.PNG)
+
+
+### Future Work   
 I risultati sui diversi classificatori sono sicuramente incoraggianti: possiamo affermare che con un dataset più ampio potremmo sicuramente diminuire l'overfitting e quindi prestazioni migliori in termini di accuracy.   
   
 La confusion matrix ci permette graficamente di vedere il numero di errori di classificazione e quali sono le emozioni che vengono confuse più spesso.  
   
 Non possiamo escludere che al crescere del dataset il classificatore che ottiene prestazioni migliori rimanga il RidgeClassifier.
 
+Dopo aver applicato diversi tuning alla NN MLPClassifier ci siamo resi conto come con uno strumento del genere, partendo dal dataset in nostro possesso, non fosse possibile ottenere risultati migliori ottenuti con il classificatore Ridge.
+
+L'idea che il dataset abbia dimensioni troppo ridotte è sostenuto oltre che dall'evidenza (numero di tweets di circa 12K) anche dall'applicazione di strutture quali le wordcloud. Queste sono un'evidenza lampante di come per diversi sentiment analizzati alcune parole ricorrano in più di una wordcloud relativa. Questo cosa significa? Per esempio la parola "FRIEND" appare in ogni wordcloud, evidenziando come questa parola sia ambigua ai fini della classificazione.
+
+Come si comporta il classificatore con diverse frasi in input contenenti la parola "friend" ma con sfumature di significato diverse? Riesce a coglierle sulla base delle altre parole delle singole frasi oppure la presenza della rilevante "friend" porterà ad errori di classificazioni importanti? 
  
  ٩( ᐛ )و Ciro Santillo && Giammarco Sommaini ヽ(´▽｀)ノ
  
