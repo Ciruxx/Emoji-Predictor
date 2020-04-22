@@ -312,12 +312,12 @@ In particolare per il sentiment GUILT:
 ![GUILT](./images/guilt.PNG)
 
 In particolare per il sentiment SHAME:
-![JOY](./images/joy.PNG)
+![SHAME](./images/shame.PNG)
 
 
 In particolare per il sentiment SADNESS:
 
-![SHAME](./images/guilt.PNG)
+![SADNESS](./images/sadness.PNG)
 
 
 In particolare per il sentiment ANGER:
