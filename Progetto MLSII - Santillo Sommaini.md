@@ -336,7 +336,7 @@ Dopo aver applicato diversi tuning alla NN MLPClassifier ci siamo resi conto com
 
 L'idea che il dataset abbia dimensioni troppo ridotte è sostenuto oltre che dall'evidenza (numero di tweets di circa 12K) anche dall'applicazione di strutture quali le wordcloud. Queste sono un'evidenza lampante di come per diversi sentiment analizzati alcune parole ricorrano in più di una wordcloud relativa. Questo cosa significa? Per esempio la parola "FRIEND" appare in ogni wordcloud, evidenziando come questa parola sia ambigua ai fini della classificazione.
 
-Come si comporta il classificatore con diverse frasi in input contenenti la parola "friend" ma con sfumature di significato diverse? Riesce a coglierle sulla base delle altre parole delle singole frasi oppure la presenza della rilevante "friend" porterà ad errori di classificazioni importanti? 
+
  
  ٩( ᐛ )و Ciro Santillo && Giammarco Sommaini ヽ(´▽｀)ノ
  
