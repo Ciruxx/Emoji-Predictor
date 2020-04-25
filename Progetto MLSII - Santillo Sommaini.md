@@ -283,7 +283,6 @@ Il terzo tentativo di addestramento ha visto la scelto della rete neurale MLPCla
  | ----------------------|----------|--------|--------|---------|--------------|-------------|---------------|------------|---------|
  | (100,100,100,100,100) | 500      | 0.0001 | sgd    | True    | 21           | 0.000000001 | adaptive    | 64         | tanh|
  
- mlp = MLPClassifier(hidden_layer_sizes=(100,100,100,100,100), max_iter=500, alpha=0.0001, solver='sgd', learning_rate='adaptive', activation='tanh', verbose=True,  random_state=21, tol=0.000000001)
 
 Il tempo di addestramento è stato di ***2 ore circa*** portando al risultato:
 
