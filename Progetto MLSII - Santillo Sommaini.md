@@ -279,9 +279,11 @@ Il tempo di addestramento è stato di ***2 ore circa*** portando al risultato:
 ### Terzo addestramento
 Il terzo tentativo di addestramento ha visto la scelto della rete neurale MLPClassifier. Il tuning dei parametri è stato il seguente: 
 
- | hidden_layer_sizes    | max_iter | alpha  | solver | verbose | random_state | tol         | learning_rate | batch_size |
- | ----------------------|----------|--------|--------|---------|--------------|-------------|---------------|------------|
- | (100,100,100,100,100) | 200      | 0.0001 | sgd    | True    | 21           | 0.000000001 | invscaling    | 64         |
+ | hidden_layer_sizes    | max_iter | alpha  | solver | verbose | random_state | tol         | learning_rate | batch_size |activation
+ | ----------------------|----------|--------|--------|---------|--------------|-------------|---------------|------------|---------|
+ | (100,100,100,100,100) | 500      | 0.0001 | sgd    | True    | 21           | 0.000000001 | adaptive    | 64         | tanh|
+ 
+ mlp = MLPClassifier(hidden_layer_sizes=(100,100,100,100,100), max_iter=500, alpha=0.0001, solver='sgd', learning_rate='adaptive', activation='tanh', verbose=True,  random_state=21, tol=0.000000001)
 
 Il tempo di addestramento è stato di ***2 ore circa*** portando al risultato:
 
