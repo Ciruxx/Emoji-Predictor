@@ -214,7 +214,26 @@ La confusion matrix per il dataset esteso si presenta quindi in questo modo
   
 ![Confusion Matrix Extended](./images/Confusion%20Matrix%20Extended.jpg)  
   
-Possiamo notare che le emoji con meno entry nel database sono quelle che risultano meno precise.  
+### Dataset psychExp nuovamente esteso  
+  
+Abbiamo trovato elementi per aumentare il dataset ancora una volta.
+La conta degli elementi è data dalla seguente tabella:   
+  
+| Emoji  | One Hot              | Count |  
+| ------ | -------------------- | ----- | 
+|joy     |(1. 0. 0. 0. 0. 0. 0.)|17641   | 
+|fear    |(0. 1. 0. 0. 0. 0. 0.)|10549   |  
+|anger   |(0. 0. 1. 0. 0. 0. 0.)|5816   |   
+|sadness |(0. 0. 0. 1. 0. 0. 0.)|10236   |  
+|disgust |(0. 0. 0. 0. 1. 0. 0.)|3009   |
+|shame   |(0. 0. 0. 0. 0. 1. 0.)|1045   |  
+|guilt   |(0. 0. 0. 0. 0. 0. 1.)|3391   |  
+  
+ La confusion matrix per il dataset esteso si presenta quindi in questo modo  
+  
+![Confusion Matrix Extended](./images/lastConfMatrix.jpg)  
+
+Possiamo notare che le emoji con meno entry nel database sono quelle che risultano meno precise per cui in generale il dataset si presenta sbilanciato. 
   
 ## Reti Neurali
 Al fine di migliorare i risultati ottenuti attraverso l'uso di Classificatori, abbiamo pensato di utilizzare le Reti Neurali. 
