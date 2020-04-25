@@ -160,8 +160,9 @@ Il modello finale ha avuto i seguenti risultati:
 | --------------------| ----------------- |-------------------|----------------|  
 | 0.6342794251497487 | 0.9936892717619954 | 0.6522522522522523| alpha = 2      |  
 
-### Dataset psychExp esteso  
-  
+### Dataset psychExp esteso(ancora una volta)
+
+Abbiamo trovato elementi per aumentare il dataset ancora una volta.  
 Il modello finale ha avuto i seguenti risultati:  
   
 | Validation Accuracy | Training Accuracy | Test Accuracy     | Best parameter |  
