@@ -154,13 +154,19 @@ Nel RidgeClassifier in particolare ci siamo soffermati sulla scelta del solver p
   
 ### Dataset psychExp esteso  
 
-  
 Il modello finale ha avuto i seguenti risultati:  
   
 | Validation Accuracy | Training Accuracy | Test Accuracy     | Best parameter |  
 | --------------------| ----------------- |-------------------|----------------|  
 | 0.6342794251497487 | 0.9936892717619954 | 0.6522522522522523| alpha = 2      |  
+
+### Dataset psychExp esteso  
   
+Il modello finale ha avuto i seguenti risultati:  
+  
+| Validation Accuracy | Training Accuracy | Test Accuracy     | Best parameter |  
+| --------------------| ----------------- |-------------------|----------------|  
+| 0.6493401360280142 | 0.9739670665118879 | 0.668988198877926| alpha = 0.2      |  
   
 Come ci aspettavamo, a causa delle dimensioni del dataset, l'accuracy non è alta, ma accettabile.  
   
