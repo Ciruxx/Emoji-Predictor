@@ -364,7 +364,11 @@ Non possiamo escludere che al crescere del dataset il classificatore che ottiene
 
 Dopo aver applicato diversi tuning alla NN MLPClassifier ci siamo resi conto come con uno strumento del genere, partendo dal dataset in nostro possesso, non fosse possibile ottenere risultati migliori ottenuti con il classificatore Ridge.
 
-L'idea che il dataset abbia dimensioni troppo ridotte è sostenuto oltre che dall'evidenza (numero di tweets di circa 12K) anche dall'applicazione di strutture quali le wordcloud. Queste sono un'evidenza lampante di come per diversi sentiment analizzati alcune parole ricorrano in più di una wordcloud relativa. Questo cosa significa? Per esempio la parola "FRIEND" appare in ogni wordcloud, evidenziando come questa parola sia ambigua ai fini della classificazione.
+Perciò abbiamo ampliato il nostro dataset fino a raggiungere 51K entry circa. 
+
+Abbiamo applicato le wordcloud per verificare quali parole e con quale occorrenza venivano prese in considerazione per le diverse emoji. 
+
+L'ostacolo principale per ottenere un risultato di valore per la NN è stata la bassa potenza computazionale offerta da CoLab e soprattutto dalle nostre macchine locali. 
 
 
  
