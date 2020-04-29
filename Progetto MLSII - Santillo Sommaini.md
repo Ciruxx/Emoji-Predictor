@@ -341,6 +341,7 @@ In particolare per il sentiment GUILT:
 ![GUILT](./images/guilt.PNG)
 
 In particolare per il sentiment SHAME:
+
 ![SHAME](./images/shame.PNG)
 
 
